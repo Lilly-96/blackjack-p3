@@ -175,3 +175,31 @@ def main():
                         else:
                            value += int(rank) # Numbered cards are worth their number.
 
+                           # Add the value for the aces:
+                  value += numberOfAces # Add 1 per ace.
+                  for i in range(numberOfAces):
+                      # If another 10 can be added with busting, do so:
+                      if value + 10 <= 21:
+                          value += 10
+
+                  return value
+           
+
+             def displayCards(cards):
+                 """Display all the cards in the cards list."""
+                 rows = ['', '', '', '', ''] # The text to display on each row.
+
+                 for i, card in enumerate(cards):
+                     rows[0] += ' ___ ' # Print the top line of the card.
+                     if card == BACKSIDE:
+                         # Print a card's back:
+                         rows[1] += '|## | '
+                         rows[2] += '|###| '
+                         rows[3] += '|_##| '
+                     else:
+                         # Print the card's front:
+                         rank, suit = card # The card is a tuple data structure.
+                          rows[1] += '|{} | '.format(rank.ljust(2))
+                          rows[2] += '| {} | '.format(suit)
+                          rows[3] += '|_{}| '.format(rank.rjust(2, '_'))
+
