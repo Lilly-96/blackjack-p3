@@ -139,3 +139,39 @@ def main():
                                    deck.append((rank, suit)) # Add the face and ace cards.
                            random.shuffle(deck)
                            return deck
+
+
+                           def displayHands(playerHand, dealerHand, showDealerHand):
+                          """Show the player's and dealer's cards. Hide the dealer's first
+
+                          card if showDealerHand is False."""
+                          print()
+                          if showDealerHand:
+                              print('DEALER:', getHandValue(dealerHand))
+                              displayCards(dealerHand)
+                          else:
+                             print('DEALER: ???')
+                             # Hide the dealer's first card:
+                             displayCards([BACKSIDE] + dealerHand[1:])
+
+                         # Show the player's cards:
+                         print('PLAYER:', getHandValue(playerHand))
+                         displayCards(playerHand)
+                   
+
+                    def getHandValue(cards):
+                    """Returns the value of the cards. Face cards are worth 10, aces are
+                    worth 11 or 1 (this function picks the most suitable ace value)."""
+                    value = 0
+                    numberOfAces = 0
+
+                    # Add the value for the non-ace cards:
+                    for card in cards:
+                        rank = card[0] # card is a tuple like (rank, suit)
+                        if rank == 'A':
+                           numberOfAces += 1
+                        elif rank in ('K', 'Q', 'J'): # Face cards are worth 10 points.
+                             value += 10
+                        else:
+                           value += int(rank) # Numbered cards are worth their number.
+
