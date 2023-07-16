@@ -220,3 +220,20 @@ def main():
                            if len(playerHand) == 2 and money > 0:
                               moves.append('(D)ouble down')
 
+                               # Get the player's move:
+                               movePrompt = ', '.join(moves) + '> '
+                               move = input(movePrompt).upper()
+                               if move in ('H', 'S'):
+                                  return move  # Player has entered a valid move.
+                               if move == 'D' and '(D)ouble down' in moves:
+                                  return move  # Player has entered a valid move.
+
+
+                        # If the program is run (instead of imported), run the game:
+                        if __name__ == '__main__':
+                            main()
+
+
+
+                              
+
