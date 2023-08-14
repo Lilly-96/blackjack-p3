@@ -1,5 +1,5 @@
 {
-   "python.linting.pylintEnabled": true,
+   "python.linting.pylintEnabled": false,
    "python.linting.enabled": true,
    "python.linting.pycodestyleEnabled": false,
    "python.linting.flake8Enabled": true,
@@ -20,7 +20,9 @@
       "**/core.python*": true,
       "**/CVS": true
    },
-   "files.autoSave": "off",
+   "files.autoSave": "afterDelay",
    "workbench.colorTheme": "Visual Studio Dark",
-   "editor.defaultFormatter": "HookyQR.beautify"
+   "editor.defaultFormatter": null,
+   "editor.formatOnSave": true,
+   "python.formatting.provider": "black"
 }
