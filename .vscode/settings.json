@@ -27,5 +27,6 @@
    "python.formatting.provider": "black",
    "[python]": {
       "editor.defaultFormatter": "ms-python.black-formatter"
-   }
+   },
+   "markdown.extension.preview.autoShowPreviewToSide": true
 }
